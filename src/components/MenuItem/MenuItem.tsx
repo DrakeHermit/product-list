@@ -2,6 +2,8 @@ import './MenuItem.css'
 
 export const MenuItem = () => {
   return (
-    <div>MenuItem</div>
+    <article>
+      <h3>Title</h3>
+    </article>
   )
 }
