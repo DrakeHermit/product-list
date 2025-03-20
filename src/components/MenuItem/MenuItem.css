@@ -1,0 +1,25 @@
+.menu__item {
+  margin-top: 2rem;
+}
+
+.menu__item img {
+  border-radius: 8px;
+}
+
+.menu__category {
+  margin-top: 1.2rem;
+  color: hsl(12, 20%, 44%);
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.menu__item-header {
+  margin-block: 4px;
+  color: hsl(14, 65%, 9%);
+  font-size: 16px;
+}
+
+.menu__price {
+  color: hsl(14, 86%, 42%);
+  font-weight: 600;
+}
