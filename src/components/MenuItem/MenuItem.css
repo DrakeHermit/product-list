@@ -23,3 +23,21 @@
   color: hsl(14, 86%, 42%);
   font-weight: 600;
 }
+
+@media screen and (min-width: 768px) {
+  ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  
+}
+
+@media screen and (min-width: 1024px) {
+  ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  
+}
