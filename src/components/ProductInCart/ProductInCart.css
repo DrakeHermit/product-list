@@ -53,3 +53,48 @@
 hr { 
   border: 1px solid hsl(13, 31%, 94%);
 }
+
+.cart__total {
+  display: flex;
+  justify-content: space-between;
+  margin-block: 1.5rem;
+  align-items: center;
+
+  .cart__total-price {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: hsl(14, 65%, 9%);
+}
+}
+
+.cart__vision {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(20, 50%, 98%);
+  margin-bottom: 2rem;
+  height: 52px;
+  gap: 8px;
+  color: hsl(14, 65%, 9%);
+
+  .bold {
+    font-weight: 600;
+  }
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.cart__confirm {
+  background-color: hsl(14, 86%, 42%);
+  color: white;
+  width: 100%;
+  border: none;
+  border-radius: 25px;
+  padding: 16px;
+  cursor: pointer;
+  font-size: 16px;
+}
+

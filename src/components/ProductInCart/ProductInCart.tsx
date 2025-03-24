@@ -2,7 +2,8 @@ import "./ProductInCart.css"
 
 export const ProductInCart = () => {
   return (
-    <ul>
+    <>
+      <ul>
         <li className="cart__product">
           <div className="cart__product-info">
             <h3>Classic Tiramisu</h3>
@@ -17,6 +18,16 @@ export const ProductInCart = () => {
           </button>
         </li>
         <hr />
-    </ul>
+      </ul>
+      <div className="cart__total">
+        <p>Order Total</p>
+        <p className="cart__total-price">$46.50</p>
+      </div>
+      <div className="cart__vision">
+        <img src="/src/assets/images/icon-carbon-neutral.svg" alt="" />
+        <p>This is a <span className="bold">carbon-neutral</span> delivery</p>
+      </div>
+      <button className="cart__confirm">Confirm Order</button>
+    </>
   )
 }
