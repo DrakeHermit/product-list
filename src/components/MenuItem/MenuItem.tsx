@@ -14,7 +14,7 @@ export const MenuItem = () => {
               <source media='(min-width: 375px)' srcSet={product.image.tablet} />
               <img src={product.image.mobile} alt={product.name} />
           </picture>
-          <AddToCart />
+          <AddToCart product={ product } />
             <p className='menu__category'>{ product.category }</p>
             <h3 className='menu__item-header'>{product.name}</h3>
             <p className='menu__price'>${product.price.toFixed(2)}</p>

@@ -1,8 +1,15 @@
 import "./AddToCart.css"
+import { ProcessedData } from "../../utils/transformJSON"
 
-export const AddToCart = () => {
+interface AddToCartProps {
+  product: ProcessedData
+}
+
+export const AddToCart= ({product}:AddToCartProps) => {
   return (
-    <button className="menu__add-to-cart">
+    <button
+      onClick={() => console.log(`Added ${product.name} to cart`)}
+      className="menu__add-to-cart">
       <img src="/src/assets/images/icon-add-to-cart.svg" alt="" />
       Add to Cart
     </button>
