@@ -1,6 +1,8 @@
-import { ProcessedData } from "../utils/transformJSON";
-
-export interface CartItem extends ProcessedData { 
+export interface CartItem {
+  id: string,
+  name: string,
+  price: number,
+  image: string,
   quantity: number
 }
  
@@ -9,4 +11,4 @@ export interface CartState {
 }
 
 export type CartAction =
-  | { type: 'ADD_TO_CART', payload: ProcessedData }
+  | { type: 'ADD_TO_CART', payload: CartItem }
