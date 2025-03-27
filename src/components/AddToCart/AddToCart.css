@@ -1,6 +1,6 @@
 .menu__add-to-cart {
   display: flex;
-  position: relative;
+  position: absolute;
   flex-direction: row;
   align-items: center;
   cursor: pointer;
@@ -14,9 +14,9 @@
   outline: 1px solid hsl(14, 86%, 42%);
   border: none;
   background-color: #fff;
-  margin-left: 23%;
-  margin-top: -30px;
   z-index: 10000;
+  top: 73%;
+  left: 23%;
 
   img {
     width: 24px;
@@ -26,17 +26,17 @@
 
 @media screen and (min-width: 768px) {
   .menu__add-to-cart {
-    margin-left: 30px;
-    margin-top: -30px;
-    padding: 12px 25px;
+    top: 62%;
+    left: 13%;
+    padding: 8px 25px;
   }
   
 }
 
 @media screen and (min-width: 1024px) {
   .menu__add-to-cart {
-    margin-left: 115px;
-    margin-top: -30px;
+    top: 75%;
+    left: 26%;
     padding: 12px 35px;
   }
   

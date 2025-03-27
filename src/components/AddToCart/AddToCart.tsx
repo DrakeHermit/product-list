@@ -6,10 +6,9 @@ interface AddToCartProps {
   id: string,
   name: string,
   price: number,
-  image: string
 }
 
-export const AddToCart = ({ id, name, price, image }:  AddToCartProps) => {
+export const AddToCart = ({ id, name, price }:  AddToCartProps) => {
   const { dispatch } = useCart()
 
   const handleAddToCart = () => {
@@ -17,7 +16,6 @@ export const AddToCart = ({ id, name, price, image }:  AddToCartProps) => {
       id,
       name,
       price,
-      image,
       quantity: 1
     }
 

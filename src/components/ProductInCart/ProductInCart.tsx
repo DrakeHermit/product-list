@@ -1,5 +1,7 @@
 import "./ProductInCart.css"
 import { useCart } from "../../utils/hooks/useContext"
+import { Fragment } from "react/jsx-runtime";
+import { calculateTotalPrice } from "../../utils/calculateTotalPrice";
 
 export const ProductInCart = () => {
   const { state } = useCart();
@@ -7,38 +9,28 @@ export const ProductInCart = () => {
   return (
     <>
       <ul>
-        <li className="cart__product">
-          <div className="cart__product-info">
-            <h3>Classic Tiramisu</h3>
-          <div className="product__quantity-info">
-            <p>1x</p>
-            <p>@ $4.99</p>
-            <p>$4.99</p>
-          </div>          
-          </div>
-          <button className="cart__product-remove">
-            <img src="/src/assets/images/icon-remove-item.svg" alt="Remove an item from the cart" />
-          </button>
-        </li>
-         <div>
-      <h3>Cart Contents:</h3>
-      {state.cart.length === 0 ? (
-        <p>Your cart is empty</p>
-      ) : (
-        <ul>
-          {state.cart.map(item => (
-            <li key={item.id}>
-              {item.name} - Quantity: {item.quantity}
+        {state.cart.map(product => (
+          <Fragment key={product.id} >
+            <li className="cart__product">
+              <div className="cart__product-info">
+                <h3>{product.name}</h3>
+              <div className="product__quantity-info">
+                <p>{product.quantity}x</p>
+                <p>@ ${product.price.toFixed(2)}</p>
+                <p>${product.price.toFixed(2)}</p>
+              </div>          
+              </div>
+              <button className="cart__product-remove">
+                <img src="/src/assets/images/icon-remove-item.svg" alt="Remove an item from the cart" />
+              </button>
             </li>
-          ))}
-        </ul>
-      )}
-    </div>
-        <hr />
+            <hr />
+          </Fragment>
+        ))}
       </ul>
       <div className="cart__total">
         <p>Order Total</p>
-        <p className="cart__total-price">${state.cart[0]?.price.toFixed(2)}</p>
+        <p className="cart__total-price">${calculateTotalPrice(state)}</p>
       </div>
       <div className="cart__vision">
         <img src="/src/assets/images/icon-carbon-neutral.svg" alt="" />

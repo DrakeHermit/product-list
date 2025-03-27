@@ -1,5 +1,6 @@
 .menu__item {
   margin-top: 2rem;
+  position: relative;
 }
 
 .menu__item img {
@@ -7,7 +8,7 @@
 }
 
 .menu__category {
-  margin-top: 1.2rem;
+  margin-top: 2rem;
   color: hsl(12, 20%, 44%);
   font-size: 14px;
   margin-bottom: 4px;
