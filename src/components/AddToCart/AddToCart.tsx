@@ -25,11 +25,21 @@ export const AddToCart = ({ id, name, price }:  AddToCartProps) => {
   }
 
   return (
-    <button
-      onClick={handleAddToCart}
-      className="menu__add-to-cart">
+    <div className="menu__add-to-cart">
+      {
+        isInCart?(
+          <div className="menu__add-subtract">
+            <button className="add"><img src="/src/assets/images/icon-increment-quantity.svg" alt="Increment product" /></button>
+            <p>{ state.cart[0].quantity }</p>
+            <button className="subtract"><img src="/src/assets/images/icon-decrement-quantity.svg" alt="Decrement product" /></button>
+          </div>
+        ) : (
+             <button className="menu__add"
+      onClick={handleAddToCart}>
       <img src="/src/assets/images/icon-add-to-cart.svg" alt="" />
-      {isInCart ? 'In Cart' : 'Add to Cart'}
+      Add to cart
     </button>
+      )}
+    </div>
   )
 }

@@ -1,21 +1,15 @@
 .menu__add-to-cart {
   display: flex;
+  justify-content: space-between;
   position: absolute;
-  flex-direction: row;
-  align-items: center;
-  cursor: pointer;
-  padding: 12px 35px;
-  border-radius: 2rem;
-  gap: 8px;
   font-size: 14px;
-  color: hsl(14, 65%, 9%);
   font-weight: 700;
   font-family: inherit;
-  outline: 1px solid hsl(14, 86%, 42%);
   border: none;
+  border-radius: 2rem;
   background-color: #fff;
   z-index: 10000;
-  top: 73%;
+  top: 71%;
   left: 23%;
 
   img {
@@ -24,20 +18,83 @@
   }
 }
 
+.menu__add {
+  padding: 12px 35px;
+  border-radius: 2rem;
+  color: hsl(14, 65%, 9%);
+  outline: 1px solid hsl(14, 86%, 42%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+.menu__add-subtract {
+  padding: 12px 35px;
+  border-radius: 2rem;
+  color: white;
+  background-color: hsl(14, 86%, 42%)!important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.add, .subtract {
+  background-color: hsl(14, 86%, 42%);
+  border: 1px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 5px;
+
+  img {
+    width: 15px;
+    height: 15px
+  }
+}
+
 @media screen and (min-width: 768px) {
   .menu__add-to-cart {
-    top: 62%;
-    left: 13%;
+    top: 63%;
+    left: 15%;
+  }
+  .menu__add {
     padding: 8px 25px;
   }
-  
+  .menu__add-subtract {
+    padding: 8px 25px;
+  }
+
+  .add, .subtract {
+    padding: 3px;
+
+    img {
+      width: 12px;
+      height: 12px;
+    }
+  }
 }
 
 @media screen and (min-width: 1024px) {
   .menu__add-to-cart {
-    top: 75%;
-    left: 26%;
+    top: 76%;
+    left: 27%;
+  }
+  .menu__add {
     padding: 12px 35px;
   }
-  
+  .menu__add-subtract {
+    padding: 12px 35px;
+  }
+
+  .add, .subtract {
+    padding: 3px;
+
+    img {
+      width: 12px;
+      height: 12px;
+    }
+  }
 }
