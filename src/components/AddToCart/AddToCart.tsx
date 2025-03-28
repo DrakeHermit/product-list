@@ -9,7 +9,9 @@ interface AddToCartProps {
 }
 
 export const AddToCart = ({ id, name, price }:  AddToCartProps) => {
-  const { dispatch } = useCart()
+  const { dispatch, state } = useCart()
+
+  const isInCart = state.cart.findIndex(item => item.id === id) !== -1
 
   const handleAddToCart = () => {
     const product: CartItem = {
@@ -27,7 +29,7 @@ export const AddToCart = ({ id, name, price }:  AddToCartProps) => {
       onClick={handleAddToCart}
       className="menu__add-to-cart">
       <img src="/src/assets/images/icon-add-to-cart.svg" alt="" />
-      Add to Cart
+      {isInCart ? 'In Cart' : 'Add to Cart'}
     </button>
   )
 }
