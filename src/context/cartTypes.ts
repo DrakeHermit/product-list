@@ -11,3 +11,5 @@ export interface CartState {
 
 export type CartAction =
   | { type: 'ADD_TO_CART', payload: CartItem }
+  | { type: 'ADD_QUANTITY', payload: { id: string, quantity: number } }
+  | { type: 'REDUCE_QUANTITY', payload: { id: string, quantity: number } }
