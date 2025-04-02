@@ -26,14 +26,37 @@ export const AddToCart = ({ id, name, price }:  AddToCartProps) => {
     dispatch({ type: 'ADD_TO_CART', payload: product })
   }
 
+  const handleIncrement = () => {
+    if (cartItem) {
+      const newQuantity = cartItem.quantity + 1;
+    
+      dispatch({
+        type: 'ADD_QUANTITY',
+        payload: { id: id, quantity: newQuantity }
+      });
+    }
+  }
+  
+  const handleDecrement = () => {
+    if (cartItem) {
+      const newQuantity = cartItem.quantity - 1;
+
+      dispatch({
+        type: 'REDUCE_QUANTITY',
+        payload: { id: id, quantity: newQuantity }
+      });
+    }
+  }
+  
+
   return (
     <div className="menu__add-to-cart">
       {
         isInCart?(
           <div className="menu__add-subtract">
-            <button className="add"><img src="/src/assets/images/icon-decrement-quantity.svg" alt="Decrement product" /></button>
-            <p>{ state.cart[0].quantity }</p>
-            <button className="subtract"><img src="/src/assets/images/icon-increment-quantity.svg" alt="Increment product" /></button>
+            <button onClick={handleDecrement} className="add"><img src="/src/assets/images/icon-decrement-quantity.svg" alt="Decrement product" /></button>
+            <p>{ cartItem?.quantity }</p>
+            <button onClick={handleIncrement} className="subtract"><img src="/src/assets/images/icon-increment-quantity.svg" alt="Increment product" /></button>
           </div>
         ) : (
              <button className="menu__add"

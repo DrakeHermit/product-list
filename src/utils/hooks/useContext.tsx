@@ -7,7 +7,7 @@ export interface CartContextType {
   dispatch: React.Dispatch<CartAction>;
 }
 
-export const useCart = (): CartContextType => {
+export function useCart (): CartContextType {
   const context = useContext(CartContext);
   
   if (!context) {

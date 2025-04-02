@@ -5,8 +5,12 @@ import { CartContextType } from "../utils/hooks/useContext";
 
 export const CartContext = createContext<CartContextType | null>(null) 
 
+const initialState = {
+  cart: [] as CartItem[],
+}
+
 export const CartProvider = ({ children }: {children: ReactNode}) => {
-  const [state, dispatch] = useReducer(cartReducer, { cart: [] as CartItem[] })
+  const [state, dispatch] = useReducer(cartReducer, initialState)
   
   const value = { state, dispatch }
   
