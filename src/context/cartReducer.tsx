@@ -23,6 +23,12 @@ export const cartReducer = (state: CartState, action: CartAction): CartState => 
           item.id === action.payload.id ? { ...item, quantity: action.payload.quantity } : item
         )
       }
+    case 'REMOVE_FROM_CART':
+      const filteredCart = state.cart.filter(item => item.id !== action.payload);
+      return {
+        ...state,
+        cart: filteredCart
+      }
     default:
       return state
   }

@@ -4,7 +4,11 @@ import { Fragment } from "react/jsx-runtime";
 import { calculateTotalPrice } from "../../utils/calculateTotalPrice";
 
 export const ProductInCart = () => {
-  const { state } = useCart();
+  const { state, handleRemoveFromCart } = useCart();
+
+  const calculateTotalItemPrice = (price: number, quantity:number): string => {
+    return (price * quantity).toFixed(2);
+  }
  
   return (
     <>
@@ -17,10 +21,10 @@ export const ProductInCart = () => {
               <div className="product__quantity-info">
                 <p>{product.quantity}x</p>
                 <p>@ ${product.price.toFixed(2)}</p>
-                <p>${product.price.toFixed(2)}</p>
+                <p>${calculateTotalItemPrice(product.price, product.quantity)}</p>
               </div>          
               </div>
-              <button className="cart__product-remove">
+              <button onClick={() => handleRemoveFromCart(product.id)} className="cart__product-remove">
                 <img src="/src/assets/images/icon-remove-item.svg" alt="Remove an item from the cart" />
               </button>
             </li>
