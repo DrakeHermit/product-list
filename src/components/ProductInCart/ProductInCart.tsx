@@ -2,9 +2,12 @@ import "./ProductInCart.css"
 import { useCart } from "../../utils/hooks/useContext"
 import { Fragment } from "react/jsx-runtime";
 import { calculateTotalPrice } from "../../utils/calculateTotalPrice";
+import { useModal } from "../../utils/hooks/useModal";
+import { Modal } from "../Modal/Modal";
 
 export const ProductInCart = () => {
   const { state, handleRemoveFromCart } = useCart();
+  const { openModal, isOpen, closeModal } = useModal()
 
   const calculateTotalItemPrice = (price: number, quantity:number): string => {
     return (price * quantity).toFixed(2);
@@ -40,7 +43,8 @@ export const ProductInCart = () => {
         <img src="/src/assets/images/icon-carbon-neutral.svg" alt="" />
         <p>This is a <span className="bold">carbon-neutral</span> delivery</p>
       </div>
-      <button className="cart__confirm">Confirm Order</button>
+      <button onClick={openModal} className="cart__confirm">Confirm Order</button>
+       <Modal isOpen={isOpen} closeModal={closeModal} />
     </>
   )
 }
