@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useRef } from "react"
 import { ProductInCart } from "../ProductInCart/ProductInCart"
 import "./Modal.css"
 
@@ -8,16 +8,23 @@ interface Props {
 }
 
 export const Modal = ({isOpen, closeModal}: Props) => {
+  const wasOpenRef = useRef(false)
 
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
-    } else {
+      console.log(`Setting ${wasOpenRef.current} to true`)
+      wasOpenRef.current = true
+    } else if (wasOpenRef.current) {
       document.body.style.overflow = 'unset';
+      console.log(`Setting ${wasOpenRef.current} to false`)
+      wasOpenRef.current = false
     }
     
     return () => {
-      document.body.style.overflow = 'unset';
+      if (wasOpenRef.current) {
+        document.body.style.overflow = 'unset';
+      }
     };
   }, [isOpen]);
 

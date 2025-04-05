@@ -35,7 +35,7 @@ export const ProductInCart = ({isInCart = true}: Props) => {
                 {isInCart && (<button onClick={() => handleRemoveFromCart(product.id)} className="cart__product-remove">
                   <img src="/src/assets/images/icon-remove-item.svg" alt="Remove an item from the cart" />
                 </button>)}
-                {!isInCart && (<p className="modal__product-price">${product.price.toFixed(2)}</p>)}
+                {!isInCart && (<p className="modal__product-price">${calculateTotalItemPrice(product.price, product.quantity)}</p>)}
               </li>
               <hr />
             </Fragment>

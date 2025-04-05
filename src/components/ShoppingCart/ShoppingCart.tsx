@@ -2,7 +2,11 @@ import { ProductInCart } from '../ProductInCart/ProductInCart';
 import './ShoppingCart.css';
 import { useCart } from '../../utils/hooks/useContext';
 
-export const ShoppingCart = () => {
+interface Props {
+  isInCart: boolean
+}
+
+export const ShoppingCart = ({isInCart}: Props) => {
   const {state} = useCart();
 
   return (
@@ -13,7 +17,7 @@ export const ShoppingCart = () => {
           <img className="empty" src="/src/assets/images/illustration-empty-cart.svg" alt="" />
           <p>Your added items will appear here</p>
         </>
-      ) : <ProductInCart />}
+      ) : <ProductInCart isInCart={isInCart} />}
       
     </section>
   )
