@@ -1,6 +1,9 @@
 import { useEffect, useRef } from "react"
-import { ProductInCart } from "../ProductInCart/ProductInCart"
+import { useCart } from "../../utils/hooks/useContext"
 import "./Modal.css"
+import { ProductListing } from "../ProductListing/ProductListing"
+import { ActionButton } from "../ActionButton/ActionButton"
+import { calculateTotalPrice } from "../../utils/calculateTotalPrice"
 
 interface Props {
   isOpen: boolean
@@ -9,15 +12,14 @@ interface Props {
 
 export const Modal = ({isOpen, closeModal}: Props) => {
   const wasOpenRef = useRef(false)
+  const {state} = useCart()
 
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
-      console.log(`Setting ${wasOpenRef.current} to true`)
       wasOpenRef.current = true
     } else if (wasOpenRef.current) {
       document.body.style.overflow = 'unset';
-      console.log(`Setting ${wasOpenRef.current} to false`)
       wasOpenRef.current = false
     }
     
@@ -32,18 +34,21 @@ export const Modal = ({isOpen, closeModal}: Props) => {
 
   return (
     <>
-      {isOpen && (
-        <div className="modal" onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <div className="modal">
+          <div className="modal-content">
             <img src="/src/assets/images/icon-order-confirmed.svg" alt="Confirm Order Icon" />
             <h2>Order Confirmed</h2>
             <p>We hope you enjoy your food</p>
-            <ProductInCart isInCart={false} />
-            {/* <button onClick={closeModal}>Start New Order</button> */}
+          <div className="modal__list">
+            <ProductListing isInCart={false} />
+            <div className='modal__total'>
+              <p>Order Total</p>
+              <p className="modal__total-price">${calculateTotalPrice(state)}</p>
+          </div>
+          </div>
+          <ActionButton text="Start New Order" action={closeModal} />
           </div>
         </div>
-      )
-}
     </>
   )
 }

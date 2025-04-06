@@ -28,6 +28,11 @@ export const cartReducer = (state: CartState, action: CartAction): CartState => 
         ...state,
         cart: filteredCart
       }
+    case 'CLEAR_CART':
+      return {
+        ...state,
+        cart: []
+      }
     default:
       return state
   }
