@@ -18,7 +18,10 @@ export const CartProvider = ({ children }: {children: ReactNode}) => {
       id,
       name,
       price,
-      quantity: 1
+      quantity: 1,
+      image: {
+        thumbnail: `/src/assets/images/${id}-thumnail.jpg`
+      }
     }
 
     dispatch({ type: 'ADD_TO_CART', payload: product })

@@ -3,10 +3,19 @@ export interface CartItem {
   name: string,
   price: number,
   quantity: number
+  image: {
+    thumbnail: string,
+  }
 }
  
 export interface CartState {
   cart: CartItem[],
+}
+
+export interface ModalProducts extends CartItem {
+  image: {
+    thumbnail: string,
+  }
 }
 
 export type CartAction =
