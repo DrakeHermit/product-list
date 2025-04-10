@@ -20,7 +20,7 @@ export const CartProvider = ({ children }: {children: ReactNode}) => {
       price,
       quantity: 1,
       image: {
-        thumbnail: `/src/assets/images/${id}-thumnail.jpg`
+        thumbnail: `/src/assets/images/${id}-thumbnail.jpg`
       }
     }
 

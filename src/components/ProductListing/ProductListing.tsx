@@ -17,8 +17,8 @@ export const ProductListing = ({isInCart}: Props) => {
     <ul>
       {state.cart.map((product) => {
         return (<Fragment key={product.id}>
-          <li className="cart__product">
-            {!isInCart && <img src={product.image.thumbnail} alt="" />}
+          <li className={`${isInCart ? 'cart__product' : 'modal__product'}`}>
+            {!isInCart && <img src={product.image.thumbnail} alt="Image for the product" />}
             <div className="cart__product-info">
               <h3>{product.name}</h3>
               <div className="product__quantity-info">
