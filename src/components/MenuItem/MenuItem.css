@@ -7,6 +7,11 @@
   border-radius: 8px;
 }
 
+li.menu__item .menu__item--border img {
+    border: 3px solid hsl(14, 86%, 42%);
+    border-radius: 9px;
+  }
+
 .menu__category {
   margin-top: 2rem;
   color: hsl(12, 20%, 44%);

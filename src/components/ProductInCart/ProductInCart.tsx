@@ -31,7 +31,7 @@ export const ProductInCart = ({isInCart = true}: Props) => {
             <p>This is a <span className="bold">carbon-neutral</span> delivery</p>
           </div>
       <ActionButton text={isInCart ? 'Confirm Order' : 'Start New Order'} action={isInCart ? openModal : handleFinishOrder} />
-      <Modal isOpen={ isOpen } closeModal={handleFinishOrder} />
+      <Modal isOpen={ isOpen } onClose={closeModal} onAction={handleFinishOrder} />
     </>
   )
 }
