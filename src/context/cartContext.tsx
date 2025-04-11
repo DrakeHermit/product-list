@@ -1,16 +1,23 @@
-import { createContext, ReactNode, useReducer } from "react";
+import { createContext, ReactNode, useEffect, useReducer } from "react";
 import { CartItem } from "./cartTypes";
 import { cartReducer } from "./cartReducer";
 import { CartContextType } from "../utils/hooks/useContext";
+import { useLocalStorage } from "../utils/hooks/useLocalStorage";
 
 export const CartContext = createContext<CartContextType | null>(null) 
 
-const initialState = {
-  cart: [] as CartItem[],
-}
+export const CartProvider = ({ children }: { children: ReactNode }) => {
+  const { getStorageValue, setStorageValue } = useLocalStorage('cart')
+  const storedCart = getStorageValue() || []
+  const initialState = {
+    cart: storedCart as CartItem[],
+  }
 
-export const CartProvider = ({ children }: {children: ReactNode}) => {
   const [state, dispatch] = useReducer(cartReducer, initialState)
+
+  useEffect(() => {
+    setStorageValue(state.cart)
+  }, [state.cart, setStorageValue])
 
   // Handler functions
   const handleAddToCart = (id: string, name: string, price: number) => {
