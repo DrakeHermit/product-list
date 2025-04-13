@@ -27,7 +27,7 @@ export const ProductInCart = ({isInCart = true}: Props) => {
           <p className="cart__total-price modal__total-price">${calculateTotalPrice(state)}</p>
       </div>
           <div className="cart__vision">
-            <img src="/src/assets/images/icon-carbon-neutral.svg" alt="" />
+            <img src="/images/icon-carbon-neutral.svg" alt="" />
             <p>This is a <span className="bold">carbon-neutral</span> delivery</p>
           </div>
       <ActionButton text={isInCart ? 'Confirm Order' : 'Start New Order'} action={isInCart ? openModal : handleFinishOrder} />

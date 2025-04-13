@@ -37,7 +37,7 @@ export const Modal = ({isOpen, onClose, onAction}: Props) => {
     <>
           <div className="modal" onClick={onClose}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-              <img src="/src/assets/images/icon-order-confirmed.svg" alt="Confirm Order Icon" />
+              <img src="/images/icon-order-confirmed.svg" alt="Confirm Order Icon" />
               <h2>Order Confirmed</h2>
               <p>We hope you enjoy your food</p>
             <div className="modal__list">

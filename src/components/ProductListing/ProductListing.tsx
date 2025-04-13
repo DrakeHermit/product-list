@@ -28,7 +28,7 @@ export const ProductListing = ({isInCart}: Props) => {
               </div>
             </div>
             {isInCart && (<button onClick={() => handleRemoveFromCart(product.id)} className="cart__product-remove">
-              <img src="/src/assets/images/icon-remove-item.svg" alt="Remove an item from the cart" />
+              <img src="/images/icon-remove-item.svg" alt="Remove an item from the cart" />
             </button>)}
             {!isInCart && (<p className="modal__product-price">${calculateTotalItemPrice(product.price, product.quantity)}</p>)}
           </li>

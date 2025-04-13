@@ -30,12 +30,14 @@ Users should be able to:
 
 ### Screenshot
 
-
+![](./public/images/desktop-version.png)
+![](./public/images/tablet-version.png)
+![](./public/images/mobile-version.jpg)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [GitHub](https://github.com/DrakeHermit/product-list)
+- Live Site URL: [Live Site](https://your-live-site-url.com)
 
 ## My process
 
@@ -50,11 +52,12 @@ Users should be able to:
 
 ### What I learned
 
-
+I learned a lot building out this project, and it was a great experience for me to build it out and fix all the bugs I came across. Adding in the increasing difficulty of using TS and trying to figure out the context/reducer pattern and I had my work cut out for me for sure. I honestly feel like my logic was actually much better than the design. I had quite a bit of problems with CSS which I already thought I knew quite well. But the harder the design file is the more I learn. I would honestly appreciate if someone explained to me how I should make the pictures smaller while keeping the grid intact. I also wrote utility functions that I can reuse over my codebase, and I also added two custom hooks to make it easier for me to work with my context/reducer and to add products in the cart into local storage.
+Overall I learned a ton and I also learned how little I actually understand some topics which I intend to get better at going forward.
 
 ### Continued development
 
-
+My plan is to keep on improving my react knowledge, along with learning TS better. I also want to start using either css modules or maybe even tailwind since it's becoming a hassle to constantly switch between the component I'm working on and the css file.
 
 ## Author
 
